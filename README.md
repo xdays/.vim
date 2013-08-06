@@ -12,7 +12,7 @@
 
 获取配置文件
 
-    git clone git@github.com:xdays/.vim.git ~/.vim
+    git clone https://github.com/xdays/.vim.git ~/.vim
 
 克隆插件管理
 
