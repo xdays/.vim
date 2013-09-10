@@ -26,6 +26,16 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
+autocmd bufnewfile *.py call HeaderPython()
+" add generic header to python files
+function HeaderPython() 
+call setline(1, "#!/usr/bin/env python") 
+    call append(1, "# -*- coding: utf-8 -*-") 
+    normal G 
+    normal o 
+    normal o 
+endfunction 
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd VimEnter * wincmd l
