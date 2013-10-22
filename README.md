@@ -7,6 +7,7 @@
 * vundle插件管理器
 * nerdtree文件浏览器
 * taglist代码查看器
+* indentLine显示缩进对齐线
 
 #使用方法
 
@@ -25,8 +26,7 @@
 
 更新插件
 
-    vim ~/.vimrc
-    :BundleUpdate
+    vim +BundleUpdate ~/.vimrc
 
 #vimrc配置详解
 
