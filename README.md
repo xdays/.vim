@@ -8,6 +8,7 @@
 * nerdtree文件浏览器
 * taglist代码查看器
 * indentLine显示缩进对齐线
+* supertab通过tab完成自动补全
 
 #使用方法
 
@@ -17,7 +18,7 @@
 
 克隆插件管理
 
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 建立链接
 
@@ -26,7 +27,7 @@
 
 更新插件
 
-    vim +BundleUpdate ~/.vimrc
+    vim +PluginInstall +qall
 
 #vimrc配置详解
 
