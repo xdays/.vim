@@ -9,7 +9,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
 call vundle#end()
 
 filetype plugin on     " required!
@@ -47,16 +46,22 @@ call setline(1, "#!/bin/sh")
     normal o 
 endfunction 
 
+autocmd bufnewfile *.js call HeaderJavaScript()
+" add generic header to python files
+function HeaderJavaScript() 
+call setline(1, "#!/usr/bin/env node") 
+    call append(1, "# -*- coding: utf-8 -*-") 
+    normal G 
+    normal o 
+    normal o 
+endfunction 
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd VimEnter * wincmd l
 
 " mapping keys
 map t :TlistToggle<CR>
-
-" supertab
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
 
 " syntax
 syntax on
