@@ -8,7 +8,6 @@
 * nerdtree文件浏览器
 * taglist代码查看器
 * indentLine显示缩进对齐线
-* supertab通过tab完成自动补全
 
 #使用方法
 
