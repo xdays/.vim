@@ -30,7 +30,7 @@ autocmd bufnewfile *.py call HeaderPython()
 " add generic header to python files
 function HeaderPython() 
 call setline(1, "#!/usr/bin/env python") 
-    call append(1, "// -*- coding: utf-8 -*-") 
+    call append(1, "# -*- coding: utf-8 -*-") 
     normal G 
     normal o 
     normal o 
@@ -50,7 +50,7 @@ autocmd bufnewfile *.js call HeaderJavaScript()
 " add generic header to python files
 function HeaderJavaScript() 
 call setline(1, "#!/usr/bin/env node") 
-    call append(1, "# -*- coding: utf-8 -*-") 
+    call append(1, "// -*- coding: utf-8 -*-") 
     normal G 
     normal o 
     normal o 
