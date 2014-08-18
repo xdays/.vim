@@ -17,19 +17,19 @@ autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function! s:CloseIfOnlyNerdTreeLeft()
-  if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-      endif
+    if exists("t:NERDTreeBufName")
+        if bufwinnr(t:NERDTreeBufName) != -1
+            if winnr("$") == 1
+                q
+            endif
+        endif
     endif
-  endif
 endfunction
 
 autocmd bufnewfile *.py call HeaderPython()
 " add generic header to python files
 function HeaderPython() 
-call setline(1, "#!/usr/bin/env python") 
+    call setline(1, "#!/usr/bin/env python") 
     call append(1, "# -*- coding: utf-8 -*-") 
     normal G 
     normal o 
@@ -39,7 +39,7 @@ endfunction
 autocmd bufnewfile *.sh call HeaderShell()
 " add generic header to python files
 function HeaderShell() 
-call setline(1, "#!/bin/sh") 
+    call setline(1, "#!/bin/sh") 
     call append(1, "# -*- coding: utf-8 -*-") 
     normal G 
     normal o 
@@ -49,8 +49,22 @@ endfunction
 autocmd bufnewfile *.js call HeaderJavaScript()
 " add generic header to python files
 function HeaderJavaScript() 
-call setline(1, "#!/usr/bin/env node") 
+    call setline(1, "#!/usr/bin/env node") 
     call append(1, "// -*- coding: utf-8 -*-") 
+    normal G 
+    normal o 
+    normal o 
+endfunction 
+
+map <C-b> :call HeaderBlog()<CR>i
+" add generic header to markdown files
+function HeaderBlog() 
+    call setline(1, "Title: " . expand("%:t:r")) 
+    call append(1, "Date: ". strftime("%Y-%m-%d %H:%M")) 
+    call append(2, "Author: admin") 
+    call append(3, "Category: ") 
+    call append(4, "Tags: ") 
+    call append(5, "Slug: " . expand("%:t:r")) 
     normal G 
     normal o 
     normal o 
@@ -62,6 +76,7 @@ autocmd VimEnter * wincmd l
 
 " mapping keys
 map t :TlistToggle<CR>
+map <C-d> a<C-R>=strftime("%c")<CR><Esc>
 
 " syntax
 syntax on
