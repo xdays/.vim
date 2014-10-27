@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'sjl/gundo.vim'
 call vundle#end()
 
 filetype plugin on     " required!
@@ -56,7 +57,7 @@ function HeaderJavaScript()
     normal o 
 endfunction 
 
-map <C-b> :call HeaderBlog()<CR>i
+nnoremap <C-b> :call HeaderBlog()<CR>i
 " add generic header to markdown files
 function HeaderBlog() 
     call setline(1, "Title: " . expand("%:t:r")) 
@@ -75,8 +76,9 @@ autocmd VimEnter * wincmd p
 autocmd VimEnter * wincmd l
 
 " mapping keys
-map t :TlistToggle<CR>
-map <C-d> a<C-R>=strftime("%c")<CR><Esc>
+nnoremap t :TlistToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <C-d> a<C-R>=strftime("%c")<CR><Esc>
 
 " syntax
 syntax on
@@ -100,7 +102,7 @@ set foldmethod=indent
 set foldlevel=99
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
