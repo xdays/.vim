@@ -57,7 +57,7 @@ function HeaderJavaScript()
     normal o 
 endfunction 
 
-nnoremap <C-b> :call HeaderBlog()<CR>i
+nnoremap <C-h> :call HeaderBlog()<CR>i
 " add generic header to markdown files
 function HeaderBlog() 
     call setline(1, "Title: " . expand("%:t:r")) 
@@ -93,9 +93,12 @@ set expandtab
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
+
+" general setting
 set noai
 set number
 set cursorline
+set incsearch
 
 " fold
 set foldmethod=indent
