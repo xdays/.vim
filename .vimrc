@@ -1,8 +1,7 @@
 set nocompatible " be iMproved
+
 filetype off " required!
-
 set rtp+=~/.vim/bundle/Vundle.vim/
-
 " plugin list
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -38,9 +37,9 @@ function HeaderPython()
 endfunction 
 
 autocmd bufnewfile *.sh call HeaderShell()
-" add generic header to python files
+" add generic header to bash files
 function HeaderShell() 
-    call setline(1, "#!/bin/sh") 
+    call setline(1, "#!/bin/bash") 
     call append(1, "# -*- coding: utf-8 -*-") 
     normal G 
     normal o 
@@ -48,7 +47,7 @@ function HeaderShell()
 endfunction 
 
 autocmd bufnewfile *.js call HeaderJavaScript()
-" add generic header to python files
+" add generic header to javascript files
 function HeaderJavaScript() 
     call setline(1, "#!/usr/bin/env node") 
     call append(1, "// -*- coding: utf-8 -*-") 
@@ -57,7 +56,7 @@ function HeaderJavaScript()
     normal o 
 endfunction 
 
-nnoremap <C-h> :call HeaderBlog()<CR>i
+nnoremap <C-m> :call HeaderBlog()<CR>i
 " add generic header to markdown files
 function HeaderBlog() 
     call setline(1, "Title: " . expand("%:t:r")) 
@@ -95,7 +94,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " general setting
-set noai
+set noai nosi
 set number
 set cursorline
 set incsearch
@@ -103,6 +102,9 @@ set incsearch
 " fold
 set foldmethod=indent
 set foldlevel=99
+
+" disable auto comment
+autocmd FileType * set formatoptions-=cro
 
 " Smart way to move between windows
 nnoremap <C-j> <C-W>j

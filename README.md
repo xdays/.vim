@@ -27,7 +27,3 @@
 更新插件
 
     vim +PluginInstall +qall
-
-#vimrc配置详解
-
-    "vimrc for xdays
