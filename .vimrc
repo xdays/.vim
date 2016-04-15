@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'nicoraffo/conque'
 Plugin 'Yggdroot/indentLine'
 Plugin 'sjl/gundo.vim'
 call vundle#end()
