@@ -10,6 +10,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'nicoraffo/conque'
 Plugin 'Yggdroot/indentLine'
 Plugin 'sjl/gundo.vim'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
 filetype plugin on     " required!
@@ -47,15 +48,6 @@ function HeaderShell()
     normal o 
 endfunction 
 
-autocmd bufnewfile *.js call HeaderJavaScript()
-" add generic header to javascript files
-function HeaderJavaScript() 
-    call setline(1, "#!/usr/bin/env node") 
-    call append(1, "// -*- coding: utf-8 -*-") 
-    normal G 
-    normal o 
-    normal o 
-endfunction 
 
 nnoremap <C-m> :call HeaderBlog()<CR>i
 " add generic header to markdown files
