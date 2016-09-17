@@ -8,6 +8,9 @@
 * nerdtree文件浏览器
 * taglist代码查看器
 * indentLine显示缩进对齐线
+* conque 在窗口编辑器里运行Shell
+* gundo 修改历史管理
+* typescript-vim typescript语法高亮
 
 #使用方法
 
