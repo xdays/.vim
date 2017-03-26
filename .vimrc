@@ -10,7 +10,7 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'nicoraffo/conque'
 Plugin 'Yggdroot/indentLine'
 Plugin 'sjl/gundo.vim'
-Plugin 'leafgarland/typescript-vim'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 filetype plugin on     " required!
@@ -91,6 +91,8 @@ set noai nosi
 set number
 set cursorline
 set incsearch
+set hlsearch
+set wildmenu
 
 " fold
 set foldmethod=indent
@@ -104,3 +106,10 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+
+" === pugin setting section ===
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'find %s -type f'

@@ -10,7 +10,7 @@
 * indentLine显示缩进对齐线
 * conque 在窗口编辑器里运行Shell
 * gundo 修改历史管理
-* typescript-vim typescript语法高亮
+* ctrlp 文件模糊查找
 
 #使用方法
 
