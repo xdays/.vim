@@ -11,6 +11,7 @@ Plugin 'nicoraffo/conque'
 Plugin 'Yggdroot/indentLine'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin on     " required!
