@@ -11,6 +11,7 @@
 * conque 在窗口编辑器里运行Shell
 * gundo 修改历史管理
 * ctrlp 文件模糊查找
+* youcompleteme 自动补全
 
 #使用方法
 
@@ -30,3 +31,9 @@
 更新插件
 
     vim +PluginInstall +qall
+
+插件配置
+
+    # install python-dev
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.py --clang-completer

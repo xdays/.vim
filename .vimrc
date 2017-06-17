@@ -94,6 +94,9 @@ set cursorline
 set incsearch
 set hlsearch
 set wildmenu
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
 
 " fold
 set foldmethod=indent
