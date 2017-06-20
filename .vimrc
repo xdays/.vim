@@ -12,6 +12,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'elzr/vim-json'
 call vundle#end()
 
 filetype plugin on     " required!
@@ -97,6 +98,7 @@ set wildmenu
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
+let g:vim_json_syntax_conceal = 0
 
 " fold
 set foldmethod=indent

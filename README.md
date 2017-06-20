@@ -12,6 +12,7 @@
 * gundo 修改历史管理
 * ctrlp 文件模糊查找
 * youcompleteme 自动补全
+* vim-json json高亮显示
 
 #使用方法
 
