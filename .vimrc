@@ -1,10 +1,10 @@
+" === Vundle section ===
 set nocompatible " be iMproved
-
 filetype off " required!
 set rtp+=~/.vim/bundle/Vundle.vim/
 " plugin list
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'nicoraffo/conque'
@@ -14,22 +14,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
 call vundle#end()
+filetype plugin indent on     " required!
 
-filetype plugin on     " required!
-
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName")
-        if bufwinnr(t:NERDTreeBufName) != -1
-            if winnr("$") == 1
-                q
-            endif
-        endif
-    endif
-endfunction
-
+" === function section ===
 autocmd bufnewfile *.py call HeaderPython()
 " add generic header to python files
 function HeaderPython() 
@@ -50,7 +37,6 @@ function HeaderShell()
     normal o 
 endfunction 
 
-
 nnoremap <C-m> :call HeaderBlog()<CR>i
 " add generic header to markdown files
 function HeaderBlog() 
@@ -65,30 +51,9 @@ function HeaderBlog()
     normal o 
 endfunction 
 
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd VimEnter * wincmd l
-
-" mapping keys
-nnoremap t :TlistToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <C-d> a<C-R>=strftime("%c")<CR><Esc>
-
-" syntax
+" === general setting ===
+" common setting
 syntax on
-
-" nobackup
-set nobackup
-set nowb
-set noswapfile
-
-" code python
-set expandtab
-set tabstop=8
-set softtabstop=4
-set shiftwidth=4
-
-" general setting
 set noai nosi
 set number
 set cursorline
@@ -98,7 +63,6 @@ set wildmenu
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
-let g:vim_json_syntax_conceal = 0
 
 " fold
 set foldmethod=indent
@@ -107,15 +71,40 @@ set foldlevel=99
 " disable auto comment
 autocmd FileType * set formatoptions-=cro
 
+" mapping keys
+nnoremap t :TlistToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <C-d> a<C-R>=strftime("%c")<CR><Esc>
+
+" nobackup
+set nobackup
+set nowb
+set noswapfile
+
 " Smart way to move between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+" === language setting ===
+set expandtab 
+autocmd FileType python setlocal tabstop=8 softtabstop=4 shiftwidth=4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 " === pugin setting section ===
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * wincmd l
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'find %s -type f'
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
