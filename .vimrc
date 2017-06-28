@@ -14,7 +14,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
 call vundle#end()
-filetype plugin indent on     " required!
+filetype plugin on     " required!
 
 " === function section ===
 autocmd bufnewfile *.py call HeaderPython()
@@ -88,9 +88,11 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 " === language setting ===
-set expandtab 
+set expandtab tabstop=8 softtabstop=4 shiftwidth=4
 autocmd FileType python setlocal tabstop=8 softtabstop=4 shiftwidth=4
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " === pugin setting section ===
 " NERDTree
