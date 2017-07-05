@@ -13,6 +13,8 @@
 * ctrlp 文件模糊查找
 * youcompleteme 自动补全
 * vim-json json高亮显示
+* DrawIt 画文本流程图
+* syntastic 代码语法检查工具
 
 #使用方法
 

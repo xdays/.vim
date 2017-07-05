@@ -13,6 +13,8 @@ Plugin 'sjl/gundo.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin on     " required!
 
