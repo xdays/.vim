@@ -18,6 +18,7 @@ Plugin 'elixir-editors/vim-elixir' " syntax of elixir
 Plugin 'pangloss/vim-javascript' " syntax of javascript
 Plugin 'elzr/vim-json' " syntax color of json
 Plugin 'Raimondi/delimitMate' " auto complete paired char
+Plugin 'scrooloose/nerdcommenter' " comment code quickly
 call vundle#end()
 filetype plugin on     " required!
 
@@ -114,3 +115,6 @@ let g:ctrlp_user_command = 'find %s -type f'
 
 " vim-json
 let g:vim_json_syntax_conceal = 0
+
+" Nerd Comment
+let g:NERDSpaceDelims = 1
