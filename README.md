@@ -21,7 +21,7 @@ git clone https://github.com/xdays/.vim.git ~/.vim
 # install vundle plugin manager
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cd ~
-ln -s .vim/.vimrc .
+ln -s .vim/vimrc .
 vim +PluginInstall +qall
 ```
 
