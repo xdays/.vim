@@ -26,6 +26,7 @@ Plugin 'elixir-editors/vim-elixir' " syntax of elixir
 Plugin 'pangloss/vim-javascript' " syntax of javascript
 Plugin 'elzr/vim-json' " syntax of json
 Plugin 'hashivim/vim-terraform' " syntax of terraform
+Plugin 'chr4/nginx.vim' " syntax of nginx
 call vundle#end()
 filetype plugin on     " required!
 
@@ -128,6 +129,7 @@ nmap <C-e> :Buffers<CR>
 let g:fzf_action = { 'ctrl-e': 'vsplit' }
 
 " autoformat
+let g:autoformat_autoindent = 0
 noremap <Leader>af :Autoformat<CR>
 autocmd BufWrite * :Autoformat
 
