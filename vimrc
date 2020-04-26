@@ -18,7 +18,7 @@ Plugin 'vim-scripts/DrawIt' " draw text flow chart
 Plugin 'Raimondi/delimitMate' " auto complete paired char
 Plugin 'vim-airline/vim-airline' " status line
 Plugin 'vim-airline/vim-airline-themes' " airline themes
-Plugin 'vim-scripts/ZoomWin' " Zoom in window and restore layout
+Plugin 'regedarek/ZoomWin' " Zoom in window and restore layout
 Plugin 'tpope/vim-sleuth' "automatically adjusts shiftwidth and expandtab
 Plugin 'dense-analysis/ale' " Language server client
 Plugin 'vim-syntastic/syntastic' " syntax check
